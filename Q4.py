@@ -27,15 +27,7 @@ ch1=[1,4,5,0,3,2]
 sum=0
 for i in range(len(ch1)-1):
     sum+=area_map[ch1[i]][ch1[i+1]]
-sum
 
--> Each and every step is based on function i.e.
--> function for chromosome
--> functon for fitness calculation
--> function for population
--> crossover , mutation, main
-Important Note: - Remember one thing do maintain that there must be unique cities in chromosome after crossover and mutation
-# ### Q1 Solution
 
 # In[23]:
 
@@ -45,16 +37,18 @@ class Q1:
         self.populationSize = 20
         self.visited=[]
         self.combinations=[]
-        self. area_map = [
-        [0,   66,  21,   3,    500,  26],
-        [66,  0,   35,   115,  36,   65],
-        [21,  35,  0,    450,  448,  846],
-        [3,   115, 450,  0,    65,   478],
-        [500, 36,  448,  65,   0,    258],
-        [26,  65,  846,  478,  258,  0] ]
+        # here are the cities labeled as index
+        # A represents 0th index of matrix, B represents 1th index..
+        # and upto so on
+        self. area_map = [ [0,   20,  50,   60,    80],
+        [20,  0,   10,   50,  70],
+        [50, 10, 0, 30, 70],
+        [60,  50, 30,  0,    70],
+        [80, 70, 20, 70, 0]]
+       
         
     def generate_Chromosome(self):
-        a=random.sample(range(0,6),6)
+        a=random.sample(range(0,5),5)
         
 #         while a in self.visited:         unique chromosome check but code doesnt go further than 36 iterations with it
 #             a=random.sample(range(0,6),6)
@@ -138,7 +132,6 @@ class Q1:
     
 
 
-# In[24]:
 
 
 x=Q1().main()
